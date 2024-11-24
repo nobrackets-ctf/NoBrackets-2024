@@ -1,0 +1,42 @@
+name: Test aléatoire
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Pwn
+description: |-
+  Vous souhaitez rejoindre la rebellion face à l'état totalitaire de Cybört, pour ce faire les rebels ont mis en place un service de candidature.
+
+  Cependant, afin de prouver les compétences des recrues, ils ont mis en place un test à l'entrée !
+
+  Arriverez-vous à rejoindre la rebélion ?
+  
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: nc challenges.nobrackets.fr 10200
+
+files:
+- dist/test_aleatoire.py
+
+flags:
+- NBCTF{W3lc0m3_T0_Th3_Reb3ll1on!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Introduction
+- Overflow
+- Drahoxx
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

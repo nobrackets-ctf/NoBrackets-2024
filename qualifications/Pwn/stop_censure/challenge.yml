@@ -1,0 +1,40 @@
+name: Stop Censure
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Pwn
+description: |-
+  L'état totalitaire de **Cybört** interdit l'accès à la majorité des sites internet. Ils ont cependant mis en place un service qui vous indique si le site est banni ou non.
+
+  À vous de prendre le contrôle de l'application afin de libérer Internet de l'emprise étatique !
+  
+  Le flag se trouve dans le fichier `/flag.txt`.
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr/
+
+flags:
+- NBCTF{#FreeTheInternet}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Facile
+- Command Injection
+- Drahoxx
+
+# Can and should be remove if not used
+files:
+- dist/censure.py
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

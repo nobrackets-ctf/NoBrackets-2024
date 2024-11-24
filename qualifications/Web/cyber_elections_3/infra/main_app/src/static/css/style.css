@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff00;
+    --neon-yellow: #ffff00;
+    --neon-orange: #ffa500;
+    --dark-bg: #0a0a0a;
+    --neon-purple: #b300ff;
+    --neon-red: #ff0000;
+    --yellow-color: #ffff00;
+    --black-color: #000000;
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-yellow),
+            0 0 4rem var(--neon-yellow),
+            0 0 6rem var(--neon-yellow),
+            0 0 8rem var(--neon-yellow),
+            0 0 10rem var(--neon-yellow);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0) }
+    20% { transform: translate(-3px, 3px) }
+    40% { transform: translate(-3px, -3px) }
+    60% { transform: translate(3px, 3px) }
+    80% { transform: translate(3px, -3px) }
+    100% { transform: translate(0) }
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-green);
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(-45deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 4px);
+    background-size: 100px 100px;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--neon-yellow);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 20px var(--neon-yellow);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 20px,
+        rgba(0, 255, 255, 0.1) 20px,
+        rgba(0, 255, 255, 0.1) 40px
+    );
+    animation: scan 5s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50%); }
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+    animation: neonFlicker 1.5s infinite alternate;
+}
+    
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.candidates-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.candidate-large {
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 45%;
+    position: relative;
+    padding: 20px;
+    background-color: var(--black-color);
+    color: var(--yellow-color);
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+}
+
+.candidate-large label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.candidate-image-large {
+    width: 200px;
+    height: 200px;
+    border-radius: 0%;
+    object-fit: cover;
+    border: 3px solid var(--neon-orange);
+    transition: all 0.3s ease;
+    margin: 9%;
+}
+
+.candidate-large:hover .candidate-image-large {
+    border-color: var(--neon-yellow);
+    box-shadow: 0 0 20px var(--neon-yellow);
+}
+
+.candidate-name {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Selection styles for the left candidate (government) */
+.candidate-large.left input[type="radio"]:checked + label .candidate-image-large {
+    border-color: var(--neon-red);
+    box-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+}
+
+/* Selection styles for the right candidate (opposition) */
+.candidate-large.right input[type="radio"]:checked + label .candidate-image-large {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple);
+}
+
+.candidate {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid var(--neon-yellow);
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.candidate::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 0, 0.2),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.candidate:hover {
+    background-color: rgba(255, 255, 0, 0.1);
+    color: var(--neon-yellow);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.candidate-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+    border: 2px solid var(--neon-orange);
+}
+
+.candidate-name {
+    flex-grow: 1;
+}
+
+.candidate:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+.candidate:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--neon-yellow);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+input[type="submit"] {
+    background-color: var(--neon-orange);
+    color: var(--dark-bg);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+input[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 165, 0, 0.2),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+input[type="submit"]:hover::before {
+    top: -50%;
+    left: -50%;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--neon-yellow);
+    box-shadow: 0 0 20px var(--neon-yellow);
+}
+
+.flash-messages {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.flash-message {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    animation: glitch 0.2s infinite;
+}
+
+.flash-message.error {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.flash-message.success {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.cyberpunk-title {
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+    animation: neonFlicker 1.5s infinite alternate;
+    position: relative;
+}
+
+.cyberpunk-title::before,
+.cyberpunk-title::after {
+    content: attr(data-text);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.cyberpunk-title::before {
+    left: 2px;
+    text-shadow: -1px 0 var(--neon-yellow);
+    animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.cyberpunk-title::after {
+    left: -2px;
+    text-shadow: 1px 0 var(--neon-green);
+    animation: glitch-2 3s infinite linear alternate-reverse;
+}   
+
+@keyframes glitch-1 {
+    0% { clip-path: inset(20% 0 30% 0); }
+    20% { clip-path: inset(60% 0 1% 0); }
+    40% { clip-path: inset(25% 0 58% 0); }
+    60% { clip-path: inset(90% 0 5% 0); }
+    80% { clip-path: inset(1% 0 95% 0); }
+    100% { clip-path: inset(10% 0 85% 0); }
+}
+
+@keyframes glitch-2 {
+    0% { clip-path: inset(25% 0 58% 0); }
+    20% { clip-path: inset(80% 0 5% 0); }
+    40% { clip-path: inset(20% 0 30% 0); }
+    60% { clip-path: inset(10% 0 85% 0); }
+    80% { clip-path: inset(40% 0 43% 0); }
+    100% { clip-path: inset(5% 0 75% 0); }
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-yellow);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--neon-green);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { clip: rect(10px, 9999px, 31px, 0); }
+    5% { clip: rect(99px, 9999px, 94px, 0); }
+    10% { clip: rect(28px, 9999px, 75px, 0); }
+    15% { clip: rect(75px, 9999px, 23px, 0); }
+    20% { clip: rect(55px, 9999px, 34px, 0); }
+    25% { clip: rect(2px, 9999px, 83px, 0); }
+    30% { clip: rect(84px, 9999px, 38px, 0); }
+    35% { clip: rect(51px, 9999px, 19px, 0); }
+    40% { clip: rect(17px, 9999px, 88px, 0); }
+    45% { clip: rect(65px, 9999px, 91px, 0); }
+    50% { clip: rect(40px, 9999px, 18px, 0); }
+    55% { clip: rect(31px, 9999px, 56px, 0); }
+    60% { clip: rect(75px, 9999px, 13px, 0); }
+    65% { clip: rect(86px, 9999px, 62px, 0); }
+    70% { clip: rect(12px, 9999px, 77px, 0); }
+    75% { clip: rect(98px, 9999px, 4px, 0); }
+    80% { clip: rect(6px, 9999px, 92px, 0); }   
+    85% { clip: rect(49px, 9999px, 29px, 0); }
+    90% { clip: rect(21px, 9999px, 68px, 0); }
+    95% { clip: rect(72px, 9999px, 8px, 0); }
+    100% { clip: rect(15px, 9999px, 83px, 0); }
+}
+
+.container.cyberpunk {
+    background-color: rgba(255, 255, 0, 0.26);
+    color: var(--black-color);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container.cyberpunk::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+    pointer-events: none;
+}
+
+.candidates-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.candidate-large {
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+    max-width: 45%;
+    position: relative;
+    padding: 20px;
+    background-color: #03030387;
+    color: var(--yellow-color);
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px) calc(100% - 10px), calc(80% - 15px) 100%, 80px calc(100% - 0px), 65px calc(100% - 15px), 0% calc(100% - 15px));
+}
+
+.cyberpunk-button {
+    background-color: var(--black-color);
+    color: var(--yellow-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}
+
+.cyberpunk-button:hover {
+    background-color: var(--yellow-color);
+    color: var(--black-color);
+    box-shadow: 0 0 10px var(--yellow-color);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(3, 3, 3, 0.6);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.button-container .cyberpunk-button {
+    flex: 1;
+    max-width: 200px;
+}

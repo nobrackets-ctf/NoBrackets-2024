@@ -1,0 +1,37 @@
+name: KSDSMDML
+author: NineLine
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Reverse
+description: |-
+  ChatGPT génère un description :)
+
+  Format NBCTF{flag}
+
+  Auteur: NineLine
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{L0g1c_iS_n0T_4lWay5_Wh3rE_y0u_Th1nK}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Difficile
+- PE
+- NineLine
+
+# Can and should be remove if not used
+files:
+- dist/KSDSMDML.exe
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+state: hidden
+
+# Do not touch, ctf-cli related
+version: '0.1'

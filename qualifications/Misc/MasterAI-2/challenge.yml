@@ -1,0 +1,45 @@
+# Required sections
+name: "Master of AI - 2"
+author: "TheoR"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Misc"
+
+# Markdown friendly
+description: |-
+    Le groupe rebelle vient de connecter une base de données à l'IA générative pour effectuer des requêtes plus facilement. 
+    Il est temps d'entamer une discussion pour récupérer le flag !
+    
+    Format du flag : `NBCTF{...}`
+    
+    Auteur: TheoR
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: https://deploy.nobrackets.fr
+# Todo, je sais pas quoi mettre
+
+# # Can be removed if unused
+# attempts: 5
+
+flags:
+    - NBCTF{Automatic_query_is_fun}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+    - IA
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

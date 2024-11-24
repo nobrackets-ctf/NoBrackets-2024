@@ -1,0 +1,67 @@
+# Required sections
+name: "Implant 2/3"
+author: "nathan.out"
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    Maintenant que nous savons quel programme est responsable de l'infection de l'ordinateur de `noclick` il est temps de comprendre un peu plus précisément ce qu'il s'est passé.
+    
+    L'informateur vous a envoyé les `logs` de l'ordinateur de `noclick`. Ce sont des fichiers qui répertorient les actions qui se sont déroulées sur le système (plus d'informations sur le [wiki](https://wiki.nobrackets.fr/docs/intro)).
+
+    Quand le virus a-t-il été lancé ? Quel est le **processus père** (*parent process*) qui a lancé le malware ? Le premier indice vous explique la notion de processus père et fils. Le second vous indique dans quelles colonnes chercher.
+
+    Le flag est au format NBCTF{<date_et_heure_du_lancement_du_virus>-<nom_processus_père>}. Par exemple : NBCTF{2024-10-01 19:34:39-svchost.exe}.
+
+    Auteur : [nathan.out](https://nathan-out.github.io/)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{2024-09-08 15:20:39-cmd.exe}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+    - forensic
+    - logs
+
+# Can be removed if unused
+files:
+    - dist/logs.zip
+
+# Can be removed if unused
+hints:
+    - {
+        content: "Un processus est un programme lancé. Souvent, un programme est lancé par un autre programme. Si `programme1.exe` lance `programme2.exe`, alors `programme1.exe` est le processus **père** de `programme2.exe`. Inversement, `programme2.exe` est le processus **fils** de `programme1.exe`.",
+        cost: 10
+    }
+    - {
+        content: "Intéressez-vous au log **le plus vieux**, c'est lui qui contient les informations que vous cherchez.",
+        cost: 10
+    }
+    - {
+        content: "Mon petit doigt me dit que la colonne `Payload4` contient une information qui pourrait vous être utile. Si vous voulez comprendre plus en profondeur ce qu'il se passe, la colonne `Payload` est très riche aussi. Pour la date et l'heure, regardez bien les noms des colonnes !",
+        cost: 10
+    }
+    - Si vous cherchez bien, vous pouvez même résoudre la dernière partie du challenge à partir des logs !
+
+# Can be removed if unused
+requirements:
+    - Implant 1/3
+
+# visible | hidden
+state: visible
+
+
+attempts: 10
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

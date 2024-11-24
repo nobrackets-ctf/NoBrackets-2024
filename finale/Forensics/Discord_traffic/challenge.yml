@@ -1,0 +1,61 @@
+# Required sections
+name: Discord Traffic
+author: Shaym
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Forensic
+
+# Markdown friendly
+description: |-
+  Votre ami a reçu un lien de téléchargement étrange, sûrement un SPAM.
+
+  Toutefois, il sait que vous êtes un apprenti Sherlock. 
+
+  De ce fait, il vous a transmis ce lien pour voir si vous pouviez en tirer quelque chose.
+
+  A vous d'identifier : 
+
+  1. Identifier la date à laquelle le fichier a été envoyé à la victime
+
+  2. Identifier avec quel service Windows le malware interagit in fine pour assurer son déploiement
+
+  Format du flag : `NBCTF{2023-12-30|Cortana}`
+
+  Note : Durant la réalisation de ce challenge, vous allez potentiellement manipuler des samples de malware. 
+  À manipuler dans un système dédié de préférence.
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Si vous avez besoin d'un service en ligne, placer un Dockerfile dans le dossier 'infra'
+# Sinon, supprimer le dossier 'infra' et la ligne 'connection_info'
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+# connection_info: nc challenges.nobrackets.fr 10203
+
+flags:
+    - NBCTF{2024-10-27|Windows Update}
+    - NBCTF{2024-10-27|windows update}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Moyen
+    - Malware Analysis
+
+# Supprimer 'files' si aucun fichier à mettre sur le CTFd
+files:
+    - dist/fichier1.c
+    - dist/fichier2
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,47 @@
+# Required sections
+name: "Big Browser Is Watching You"
+author: "alex532h"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    Un de nos agents infiltrés, Winston Smith, a réussi à accéder au PC d'un membre du gouvernement. Il en a extrait les données du navigateur installé et nous les a fait parvenir.
+    Nous pensons qu'ils utilisent un site ultraconfidentiel pour communiquer et préparer leurs actions politiques.
+    Pouvez-vous récupérer l'URL et l'email utilisé ?
+
+    SHA1SUM: `eeeb939919760f80ffe9f80fec3b6ed3dd0bca60  mozilla_dump.zip`
+
+    Format du flag : `NBCTF{url_complete:email}`
+
+    Auteur : alex532h
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{https://airstrip-one.com/:o.brien@airstrip-one.com}
+    - NBCTF{https://airstrip-one.com:o.brien@airstrip-one.com}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - forensic
+    - Moyen
+    - web browser
+
+# Can be removed if unused
+files:
+    - dist/mozilla_dump.zip
+    - dist/SHA1SUM
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

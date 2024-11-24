@@ -1,0 +1,13 @@
+ version: '3.1'
+
+ services:
+   canard_dechaine:
+     image: canard_dechaine
+     privileged: false
+     build:
+       context: .
+       dockerfile: ./infra/Dockerfile
+     container_name: canard_dechaine
+     restart: always
+     ports:
+       - "10000:3000"

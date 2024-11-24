@@ -1,0 +1,36 @@
+# Required sections
+name: "NoBurningColdsThatFire - 4/4"
+author: "shynif"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Game Hacking"
+
+# Markdown friendly
+description: |-
+    Une expérience vidéoludique cache quelque chose
+    
+    Flag 4: Il suffit juste de couper du bois... Beaucoup de bois
+    
+    Auteur: Shynif
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{Allez_on_y_retourne!Chop_chop!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+    - Game-Hacking
+    - Web
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

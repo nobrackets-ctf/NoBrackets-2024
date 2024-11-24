@@ -1,0 +1,34 @@
+name: MaskedRevamp
+author: K.L.M
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web3
+description: |-
+  Le gouvernement programme des bombes et les déclenche à distance à l'aide un contrat intelligent, trouvez un moyen de désamorcer la bombre en exploitant le contrat !
+
+  Auteur : [K.L.M](https://x.com/Clemhate2)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr
+
+flags:
+- NBCTF{Un3_Pr3d1ct1on_Vr41m3nt?}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Difficile
+- Web3
+- K.L.M
+
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

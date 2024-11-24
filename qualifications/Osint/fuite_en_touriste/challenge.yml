@@ -1,0 +1,39 @@
+name: Fuite en touriste
+author: 6E 61 74 68
+category: OSINT
+description: |-
+    L'équipe a trouvé une piste sur un potentiel coupable de la machinerie. 
+    La photo qu'il a posté sur Instagram semble contenir des indications sur sa fuite. 
+    Il a ajouté la description suivante: "La vue est plus jolie du balcon directement!" 
+    Pouvez-vous nous indiquer le nom de l'hôtel où il a séjourné ?
+    
+    Format du flag : `NBCTF{hotel-adlon-kempinski}`
+
+    Auteur : [6E 61 74 68](https://twitter.com/6e617468) from [isFred.fr](https://isFred.fr)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{suite-ponte-pietra}
+    - NBCTF{osteria-ponte-pietra}
+    - NBCTF{ristorante-ponte-pietra}
+    - NBCTF{osteria-ponte-pietra-ristorante}
+    - NBCTF{ponte-pietra}
+    - NBCTF{hotel-suite-ponte-pietra}
+
+topics:
+    - geoint
+
+tags:
+    - Introduction
+
+files:
+    - dist/picture.jpg
+
+version: "0.1"

@@ -1,0 +1,74 @@
+# Required sections
+name: "L'histoire supprimée 1/2"
+author: "alex532h"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    Notre système de détection nous a remonté une alerte d'exécution de code sur un poste. 
+    Malheureusement au moment du dump, l'historique de commandes powershell a été effacé. 
+    Y a-t-il moyen de quand même les retrouver ?
+
+    SHA1SUM: `94b987bf8ea0f6d5424ef8f7cf63ef496fa0db25  Collection_DESKTOP-D15T5J3_C-_2024-09-22T16-00-40Z.zip`
+
+    [Collection_DESKTOP-D15T5J3_C-_2024-09-22T16-00-40Z.zip](http://downloads.nobrackets.fr/Forensics/Collection_DESKTOP-D15T5J3_C-_2024-09-22T16-00-40Z.zip)
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur : alex532h
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+flags:
+    - NBCTF{w1nd0w5_3v3n7_l065_4r3_4w50m3!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - forensic
+    - Difficile
+    - dfir
+    - windows
+    - powershell
+
+# Can be removed if unused
+files:
+    - dist/95c45247e2b73bb48022bf1649f7b4c257a41ae3f2621ebe6a30bc316f79ad48.key.pem
+#    - dist/Collection_DESKTOP-D15T5J3_C-_2024-09-22T16-00-40Z.zip
+    - dist/velociraptor_key
+    - dist/data-zip_key
+    - dist/SHA1SUM
+
+# Can be removed if unused
+hints:
+    - generaptor (CERT-EDF) peut faciliter l'extraction des données
+    - {
+        content: "Certains journaux d'évènements pourraient être intéressants à regarder.",
+        cost: 10
+    }
+    - {
+        content: "4104: mais qu'est-ce donc ?",
+        cost: 10
+    }
+    - {
+        content: "Hayabusa peut être utile pour lire les evtx et remonter des anomalies. Les évènements PowerShell en feront partie.",
+        cost: 10
+    }
+#    - {
+#        content: "Une utilisation possible: `hayabusa csv-timeline --directory <directory> -p verbose`",
+#        cost: 10
+#    }
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

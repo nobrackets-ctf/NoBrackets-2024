@@ -1,0 +1,36 @@
+name: Canard Déchainé
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web
+description: |-
+  L'état totalitaire de **Cybört** interdit l'accès a la majorité des sites internet. Pour cela ils ajoutent un bandeau rendant la lecture du contenu du site impossible.
+
+  A vous de supprimer ce bandeau afin de lire le flag ! Le flag se trouve à la fin d'un des articles.
+
+  Format du flag : NBCTF{...}
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+connection_info: http://challenges.nobrackets.fr:10000/
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{#FreeTheWeb}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Introduction
+- Js
+- Drahoxx
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

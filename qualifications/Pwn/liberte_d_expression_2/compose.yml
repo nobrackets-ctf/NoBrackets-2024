@@ -1,0 +1,13 @@
+ version: '3.1'
+ 
+ services:
+   liberte_d_expression_v2:
+     image: liberte_d_expression_v2
+     privileged: false
+     build:
+       context: ./infra
+       dockerfile: Dockerfile
+     container_name: liberte_d_expression_v2
+     restart: always
+     ports:
+       - "10204:10204"

@@ -1,0 +1,10 @@
+ version: '3.1'
+ 
+ services:
+  suiiido-app:
+    privileged: false
+    build:
+      context: ./infra/
+    container_name: suiiido-app
+    ports:
+      - "10200:10200"

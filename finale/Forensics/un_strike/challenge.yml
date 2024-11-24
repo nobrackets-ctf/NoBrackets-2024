@@ -1,0 +1,52 @@
+# Required sections
+name: C’est un Strike !
+author: Shaym
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Forensic
+
+# Markdown friendly
+description: |-
+  Un implant a été détecté sur une machine victime. Vous disposez du dump de l'implant malveillant, à vous de l'analyser.
+
+  Identifiez le type de beacon utilisé dans le dump
+
+  L'ip du server avec lequel il communique
+
+  Ainsi que l'endpoint utilisé pour communiquer avec le C2
+
+  Format du flag : `NBCTF{beacon_reverse_shell|127.0.0.1|index.html}`
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Si vous avez besoin d'un service en ligne, placer un Dockerfile dans le dossier 'infra'
+# Sinon, supprimer le dossier 'infra' et la ligne 'connection_info'
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+# connection_info: nc challenges.nobrackets.fr 10203
+
+flags:
+    - NBCTF{windows-beacon_http-reverse_http|10.10.10.10|submit.php}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Facile
+    - Dump analysis
+
+# Supprimer 'files' si aucun fichier à mettre sur le CTFd
+files:
+    - dist/malicious.zip
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,30 @@
+name: Sudoku Live
+author: TheoR
+category: Misc
+
+description: |-
+  http://forum.enjoysudoku.com/sky-one-vorderman-s-sudoku-live-t725.html
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : TheoR
+
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+connection_info: nc challenges.nobrackets.fr 10301
+
+flags:
+    - NBCTF{C35t_1mp0rTan1_d3_54v01R_COmp1eR_jUsQu4_9}
+
+tags:
+    - Facile
+    - Programmation
+
+state: visible
+
+version: "0.1"

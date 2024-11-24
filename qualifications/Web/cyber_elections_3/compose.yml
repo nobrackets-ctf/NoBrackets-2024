@@ -1,0 +1,26 @@
+ version: '3.1'
+ 
+ services:
+  accounts-app:
+    image: accounts-app
+    privileged: false
+    build:
+      context: ./infra/accounts_app
+      dockerfile: Dockerfile
+    container_name: accounts-app
+    restart: always
+
+  cyber_elections_three:
+    image: cyber_elections_three
+    privileged: false
+    build:
+      context: ./infra/main_app
+      dockerfile: Dockerfile
+    container_name: cyber_elections_three
+    restart: always
+    ports:
+      - "5000:5000"
+    links:
+      - accounts-app
+
+   

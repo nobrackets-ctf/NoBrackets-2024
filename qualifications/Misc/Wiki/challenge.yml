@@ -1,0 +1,26 @@
+# Required sections
+name: "Wiki"
+author: "TheoR"
+category: "Misc"
+
+# Markdown friendly
+description: |-
+    Un wiki est à votre disposition pour vous éclairer sur différents sujets. Si vous êtes bloqué sur un challenge, n'hésitez pas à y jeter un coup d'oeil ! [Lien wiki](https://wiki.nobrackets.fr/)
+
+    Format du Flag: NBCTF{flag}
+
+    Auteur: TheoR
+
+# Do not touch
+value: 10
+type: standard
+
+flags:
+    - NBCTF{W1k1_appr0v3d}
+
+tags:
+    - Introduction
+
+state: visible
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

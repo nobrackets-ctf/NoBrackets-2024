@@ -1,0 +1,33 @@
+name: HiddenContract
+author: K.L.M
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web3
+description: |-
+  Vous avez réussi à récupérer un des contrats que le gouvernement utilise, comprenez comment il fonctionne et retrouvez la clé.
+
+  Auteur : [K.L.M](https://twitter.com/Clemhate2)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{Y0U_F0UND_M3?}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Moyen
+- Web3
+- K.L.M
+
+# Can and should be remove if not used
+files:
+- dist/HiddenContract.txt
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

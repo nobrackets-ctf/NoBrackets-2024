@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Modbus - Amazone</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            background-color: #2d3748;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #2b6cb0;
+            margin-top: 0px;
+        }
+
+        p, ul {
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2b6cb0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        figure {
+            max-width: 90%;
+            margin: auto;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        figcaption {
+            padding: 10px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>Amazone</div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="documentation.html" style="margin-right: 50px;">Documentation</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Protocole Modbus pour l'Entrepôt de Colis</h2>
+        <p>Cette interface utilise le protocole <strong>Modbus TCP</strong> pour permettre la communication avec le système de gestion des colis dans l’entrepôt.</p>
+
+        <h3>Description du système</h3>
+        
+        <figure>
+            <img src="/images/ensemble.png" alt="Entrepôt de Traitement de Colis">
+            <figcaption>Vue d'ensemble du système</figcaption>
+        </figure>
+
+        <h4>Les actionneurs</h4>
+
+        <p>Le système est composé de plusieurs actionneurs :</p>
+        <ul>
+            <li>Le convoyeur <i>Entry conveyor</i> qui déplace les colis qui arrivent.</li>
+            <li>Le transfert à chaîne n°1 qui prend les colis venant du 1er convoyeur et les envoie sur le transfert à chaîne n°2.</li>
+            <li>Le transfert à chaîne n°2 qui prend les colis venant du transfert à chaîne n°1 et les envoie sur le convoyeur de sortie.</li>
+            <li>Un convoyeur <i>Exit conveyor</i> qui déplace les colis vers la sortie.</li>
+        </ul>
+
+        <h4>Les capteurs</h4>
+
+        <p>Le système est composé de plusieurs capteurs :</p>
+        <ul>
+            <li>Un capteur <i>At entry</i> placé entre la fin du convoyeur d'entrée et le début du transfert à chaîne n°1.</li>
+            <li>Un capteur <i>At transfer 1</i> placé au fond du transfert à chaîne n°1.</li>
+            <li>Un capteur <i>At transfer 2</i> placé au fond du transfert à chaîne n°2.</li>
+            <li>Un capteur <i>At exit</i> placé entre la sortie du transfert à chaîne n°2 et le convoyeur de sortie.</li>
+            <li>Un capteur <i>Flag sensor</i> placé au sol.</li>
+        </ul>
+
+        <figure>
+            <img src="/images/zoom-capteurs.png" alt="Capteurs">
+            <figcaption>Zoom sur les capteurs (vus avec l'entrée dans le dos)</figcaption>
+        </figure>
+
+        <h3>Contrôle des convoyeurs</h3>
+
+        <p>Chaque convoyeur est contrôlé par un <i>coil</i> booléen. Une valeur à <i>vrai</i> active le moteur et permet aux colis d'avancer et une valeur à <i> faux</i> désactive le moteur.</p>
+
+        <figure>
+            <img src="/images/actionneurs.png" alt="Actionneurs">
+            <figcaption>Vue des convoyeurs</figcaption>
+        </figure>
+
+        <h3>Contrôle des transferts à chaîne</h3>
+
+        <p>Chaque transfert à chaîne est contrôlé par quatre <i>coils</i> booléens :</p>
+
+        <ul>
+            <li><i>Load</i> déplace les colis dans le sens de la marche.</li>
+            <li><i>Unload</i> déplace les colis en marche arrière.</li>
+            <li><i>Transfer right</i> soulève les chaînes et déplace les colis à droite.</li>
+            <li><i>Transfer left</i> soulève les chaînes et déplace les colis à gauche.</li>
+        </ul>
+
+        <p><b>Note importante</b> : Si un <i>coil</i> est activé, il est conseillé de désactiver les quatres autres <i>coils</i> pour que le transfert fonctionne normalement.</p>
+
+        <figure>
+            <img src="/images/transferts-chaine.png" alt="Actionneurs">
+            <figcaption>Zoom sur les transferts à chaîne et leurs actions possibles</figcaption>
+        </figure>
+
+        <h3>Lecture des capteurs</h3>
+
+        <p>Les valeurs booléennes de chaque capteur sont stockés dans des <i>discrete input registers</i>.</p>
+
+        <h3>Configuration Modbus</h3>
+
+        <p>Les numéros de registres pour lire les capteurs et les numéros de <i>coil</i> pour actionner les actionneurs sont détaillés ci-dessous :</p>
+        
+        <figure>
+            <img src="/images/modbus-configuration.png" alt="Configuration Modbus">
+        </figure>
+
+        <p>Dans l'exemple ci-dessus, les <i>coils</i> 0, 4, 5 et 6 sont activés. Cela signifie que le convoyeur d'entrée est activé, le transfert à chaîne n°1 fait avancer le colis vers l'avant, le transfert à chaîne n°2 fait avancer le colis vers la gauche et le convoyeur de sortie est activé.</p>
+
+        <h3>Adresse et Port</h3>
+        <p>Connectez-vous au serveur Modbus en TCP en utilisant la configuration suivante :</p>
+
+        <table>
+            <tr><td>Adresse IP</td><td id='server-address'></td></tr>
+            <tr><td>Port</td><td>502</td></tr>
+            <tr><td>Unit ID</td><td>1</td></tr>
+        </table>
+
+        <!-- hilighted warning -->
+        <p style="background-color: #f7d4c4; padding: 10px; border-radius: 5px;">
+            <strong>Attention</strong> : Un automate programmable industriel envoie des instructions Modbus pour contrôler la chaîne. Vos actions peuvent interférer avec le fonctionnement normal du système.
+        </p>
+
+        <a href="index.html" class="button">Retour à l'accueil</a>
+    </div>
+
+    <script>
+        document.getElementById('server-address').innerText = window.location.hostname;
+    </script>
+
+</body>
+</html>

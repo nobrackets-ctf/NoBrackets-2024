@@ -1,0 +1,10 @@
+ version: '3.1'
+ 
+ services:
+  heaperfort:
+    privileged: false
+    build:
+      context: ./infra/
+    container_name: heaperfort
+    ports:
+      - "10203:10203"

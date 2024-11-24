@@ -1,0 +1,31 @@
+name: BlablaBlabla 
+author: TheoR
+category: Misc
+
+description: |-
+  Bienvenue au salon de l'ECW !!
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : TheoR
+
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+flags:
+    - NBCTF{Le_reseau_tout_le_monde_aime_le_reseau}
+
+files:
+    - dist/stand.png
+
+tags:
+    - Facile
+    - ECW
+
+state: visible
+
+version: "0.1"

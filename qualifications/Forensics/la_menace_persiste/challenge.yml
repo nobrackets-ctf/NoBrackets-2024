@@ -1,0 +1,51 @@
+name: La menace persiste
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Forensic
+description: |-
+  Cela fait maintenant 2 mois que vous infiltrez un groupe d'attaquant ennemi, toutefois depuis 3 jours plus aucun message sur le groupe Telegram.
+  
+  De plus, le serveur de rebond que vous utilisiez fait des connexions étranges... 
+  
+  Retrouvez ce qu'ont bien pu faire les pirates.
+
+
+  Retrouver le chemin complet du fichier permettant la persistance.
+
+  Retrouver le username et le hostname de l’attaquant.
+
+  Retrouver l’heure UTC à laquelle l’attaquant s’est connecté.
+
+  Format du flag : `NBCTF{/home/user/coucou.txt|user@laptop|13:13:13}`
+
+  [Télécharger ici](https://downloads.nobrackets.fr/Forensics/debsdebs.ova.gz)
+
+  Nom d'utilisateur : `user`
+
+  Mot de passe : `user`
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{/lib/python3/dist-packages/ssh_import_id/version.py|solidsteak@bastarlis|13:35:58}
+- NBCTF{/usr/lib/python3/dist-packages/ssh_import_id/version.py|solidsteak@bastarlis|13:35:58}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Difficile
+- Shaym
+
+# Can and should be remove if not used
+# files:
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

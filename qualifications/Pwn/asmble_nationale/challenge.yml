@@ -1,0 +1,50 @@
+name: ASMblé Nationale
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Pwn
+description: |-
+  Grâce à ce nouveau service, vous pouvez exécuter des lois écrites dans un langage ancien : l'assembleur.
+
+  Arriverez-vous à prendre le contrôle de l'application ?
+
+  Le flag est stocké dans `/flag.txt`
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: nc challenges.nobrackets.fr 10201
+
+files:
+- dist/asmble_nationale.asm
+- dist/asmble_nationale
+- dist/Makefile
+
+flags:
+- NBCTF{Oh!So_Y0u_Sp3ak_ASM?}
+
+hints:
+- {
+        content: "https://shell-storm.org/shellcode/index.html",
+        cost: 10
+  }
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Facile
+- Asm
+- Drahoxx
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

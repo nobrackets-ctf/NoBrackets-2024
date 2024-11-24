@@ -1,0 +1,39 @@
+version: '3.1'
+
+services:
+  crypto-time-to-flag:
+    privileged: false
+    build:
+      context: ./time-to-flag/infra
+      dockerfile: Dockerfile
+    container_name: crypto-time-to-flag
+    restart: always
+    ports:
+      - "10400:1337"
+    mem_limit: 512m
+    cpus: 0.3
+
+  crypto-time-to-flag-ou-pas:
+    privileged: false
+    build:
+      context: ./time-to-flag-ou-pas/infra
+      dockerfile: Dockerfile
+    container_name: crypto-time-to-flag-ou-pas
+    restart: always
+    ports:
+      - "10401:1338"
+    mem_limit: 512m
+    cpus: 0.3
+
+  crypto-outil-de-chiffrement:
+    privileged: false
+    build:
+      context: ./Outil_Chiffement/infra
+      dockerfile: Dockerfile
+    container_name: crypto-outil-de-chiffrement
+    restart: always
+    ports:
+      - "10402:1337"
+    mem_limit: 512m
+    cpus: 0.3
+

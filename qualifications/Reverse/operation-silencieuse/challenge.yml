@@ -1,0 +1,35 @@
+name: Opération Silencieuse
+author: Endeavxor
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Reverse
+description: |-
+  Des rumeurs courent sur une opération de censure en cours de préparation par le gouvernement. Cependant, les membres semblent utiliser un canal de communication chiffré.
+
+  Nos agents sur le terrain se sont mis en coupure réseau afin d'essayer de tirer le plus d'informations possibles. On compte sur vous pour retrouver ce qu'il se trame !
+
+  Format NBCTF{flag}
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{R4Nd0m_4Nd_pYC_n07_50_3NcrYP73d}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Moyen
+- pyc
+- Endeavxor
+
+# Can and should be remove if not used
+files:
+- dist/capture.pcap
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

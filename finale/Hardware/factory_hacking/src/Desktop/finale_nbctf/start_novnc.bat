@@ -1,0 +1,1 @@
+python -m websockify 5901 127.0.0.1:5900 --web .\noVNC-master\

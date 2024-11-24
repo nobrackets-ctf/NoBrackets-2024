@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+  misc-crack-and-hash:
+    privileged: true
+    build:
+      context: ./Crack-and-Hash/infra/
+      dockerfile: Dockerfile
+    container_name: misc-crack-and-hash
+    restart: always
+    ports:
+      - "10301:1337"
+    mem_limit: 512m
+    cpus: 0.3
+
+  misc-capitales:
+    privileged: false
+    build:
+      context: ./Capitales/infra
+      dockerfile: Dockerfile
+    container_name: misc-capitales
+    restart: always
+    ports:
+      - "10300:1337"
+    mem_limit: 512m
+    cpus: 0.3
+
+  misc-toolkit-adder:
+    privileged: false
+    build:
+      context: ./toolkit_adder/infra
+      dockerfile: Dockerfile
+    container_name: misc-toolkit-adder
+    restart: always
+    ports:
+      - "10302:1337"
+    mem_limit: 512m
+    cpus: 0.3

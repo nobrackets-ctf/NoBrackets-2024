@@ -1,0 +1,26 @@
+# Required sections
+name: "Discord"
+author: "TheoR"
+category: "Misc"
+
+# Markdown friendly
+description: |-
+   Rejoignez le discord de l'événement pour suivre toutes les informations lors du CTF ! [Lien discord](https://discord.gg/68T7cnFYeK)
+
+    Format du Flag: NBCTF{flag}
+
+    Auteur: TheoR
+
+# Do not touch
+value: 10
+type: standard
+
+flags:
+    - NBCTF{D1sc0rd_appr0v3d}
+
+tags:
+    - Introduction
+
+state: visible
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

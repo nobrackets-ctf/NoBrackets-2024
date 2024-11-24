@@ -1,0 +1,13 @@
+ version: '3.1'
+ 
+ services:
+   masked_revamp:
+     image: masked_revamp
+     privileged: false
+     build:
+       context: ./infra
+       dockerfile: Dockerfile
+     container_name: masked_revamp
+     restart: always
+     ports:
+       - "10150:8000"

@@ -1,0 +1,39 @@
+name: "Secure Authentication"
+author: "Al-oxos"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Web"
+
+# Markdown friendly
+description: |-
+    J'ai développé une application d'authentification en PHP.
+    Vu toutes les vérifications que j'ai mises, c'est impossible de la contourner n'est ce pas ?
+
+    Format du flag : NBCTF{FLAG}
+
+    Auteur : Al-oxos
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: http://challenges.nobrackets.fr:10002
+
+flags:
+    - NBCTF{W0W_PHP_1S_S0_d4mn_Vuln3rable_Plz_Us3_0th3r_L4ngu4g3s}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

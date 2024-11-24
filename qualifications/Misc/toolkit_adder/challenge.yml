@@ -1,0 +1,45 @@
+# Required sections
+name: "Toolkit Adder"
+author: "Shy"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Misc"
+
+# Markdown friendly
+description: |-
+    Le gouvernement possède un service de partage de fonctions python.
+    Une de ces fonctions nous intéresse... Agent, vous devez la récupérer.
+    Bonne chance o7
+
+    Auteur: Shynif
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: nc challenges.nobrackets.fr 10302
+
+flags:
+    - NBCTF{Les_arobases_ne_sont_pas_la_pour_decorer}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Facile
+    - Pyjail
+    - Python
+
+# Can be removed if unused
+files:
+    - dist/toolkit_adder.py
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

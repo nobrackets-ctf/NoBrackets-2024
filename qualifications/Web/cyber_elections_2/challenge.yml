@@ -1,0 +1,45 @@
+name: Cyber Elections (2/3)
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web
+description: |-
+  Après leur échec cuisant en mesure de cybersécurité, l'état totalitaire de **Cybört** veut éviter la triche sur sa plateforme de vote.
+  
+  Pour cela, ils ont mis en place un système de captcha pour s'assurer que ce soit un humain qui vote.
+
+  Prouvez-leur que cette mesure n'est pas suffisante en faisant gagner l'opposition.
+
+  *Ps: On ne peut toujours pas voter pour le candidat de son choix...*
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr
+
+flags:
+- NBCTF{R0b0t_v0t3s_1n_th3_c1ty!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Moyen
+- Captcha
+- Drahoxx
+
+requirements:
+  - Cyber Elections (1/3)
+
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

@@ -1,0 +1,61 @@
+# Required sections
+name: "Implant 1/3"
+author: "nathan.out"
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    `noclick`, un de nos spécialiste drone n'a plus donné signe de vie depuis plusieurs jours. Il travaillait activement sur un "exploit" (programme destiné à exploiter une faille) pour neutraliser la reconnaissance faciale des drones du gouvernement. On pense qu'il aurait été arrêté !
+    Un informateur s'est rendu à son domicile qui était vide. Sur nos ordres, il a lancé un programme qui a collecté toutes les traces d'activité sur le poste de `noclick`. Ces traces vont vous permettre de reconstituer ce qu'il s'est passé sur sa machine.
+    
+    L'objectif de cette suite de challenge est de comprendre les différentes traces générées par le virus, ainsi que ses capacités.
+
+    Il nous faut tout d'abord identifier le programme malveillant. L'informateur pense que le nom du virus qui a compromis l'ordinateur de `noclick` se trouve dans le fichier joint. 
+    Il s'agit d'une extraction de l'`Amcache` (plus d'information à ce propos sur le [wiki](https://wiki.nobrackets.fr/docs/intro), partie Forensic > Windows).
+    
+    Avant de partir, vous entendez l'informateur grogner : *"il téléchargeait n'importe quoi sur son ordinateur, pas étonnant qu'il se soit fait chopper !"*.
+    
+    L'objectif est de trouver le nom du programme malveillant ainsi que son hash `SHA1`. Le format du flag est le suivant : NBCTF{<nom_du_programme>-<hash_SHA1>}. Par exemple : NBCTF{coucou.exe-56916ed0fe1aaad6075c48666e08e208a0028cb4}. En cas de blocage, n'hésitez pas à prendre les indices !
+
+    Auteur : [nathan.out](https://nathan-out.github.io/)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{IMPORTANT_nouvel_exploit_drone_a_tester.exe-89542eac72f11afb0711535d0404c79aad9c3728}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Facile
+    - forensic
+    - amcache
+
+# Can be removed if unused
+files:
+    - dist/Amcache.zip
+
+# Can be removed if unused
+hints:
+    - {
+        content: "Prêtez attention à ce que l'informateur a dit avant de partir, et si `noclick` avait **téléchargé** un exécutable malveillant ?",
+        cost: 10
+    }
+    - {
+        content: "Le hash du programme en question commence par *8954*.",
+        cost: 10
+    }
+
+# visible | hidden
+state: visible
+
+attempts: 15
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

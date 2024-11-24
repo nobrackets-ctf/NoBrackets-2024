@@ -1,0 +1,44 @@
+# Required sections
+name: "L'histoire supprimée 2/2"
+author: "alex532h"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    Super ! Vous avez réussi à retrouver les commandes qui ont été exécutées. 
+    Pouvez-vous les analyser et déterminer ce qu'il se passe ?
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur : alex532h
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+flags:
+    - NBCTF{1_m_runn1n6_0n_3ach_S3s5ioN_sT4r7}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - forensic
+    - Difficile
+    - dfir
+    - windows
+
+# Can be removed if unused
+requirements:
+    - L'histoire supprimée 1/2
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

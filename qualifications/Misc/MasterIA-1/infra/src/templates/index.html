@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master of AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="chat-container">
+        <!-- Title Section -->
+        <div id="chat-title">
+            <h1>Master of AI</h1>
+        </div>
+
+        <!-- Message Section for reset confirmation -->
+        <div id="message-container" style="display:none;">
+            <p id="reset-message" style="color: green; font-weight: bold;"></p>
+        </div>
+
+        <!-- Chat Box Section -->
+        <div id="chat-box">
+            <div id="chat-log"></div>
+        </div>
+
+        <!-- Chat Input Section -->
+        <div id="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+
+        <!-- New Chat Button -->
+        <div id="new-chat">
+            <button id="new-chat-button">New Chat</button>
+        </div>
+        <br>
+    </div>
+
+    <script>
+        const chatLog = document.getElementById('chat-log');
+        const messageContainer = document.getElementById('message-container');
+        const resetMessage = document.getElementById('reset-message');
+
+        document.getElementById('send-button').addEventListener('click', sendMessage);
+        document.getElementById('message-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        document.getElementById('new-chat-button').addEventListener('click', resetChat);
+
+        function sendMessage() {
+            const userMessage = document.getElementById('message-input').value;
+            if (!userMessage.trim()) return; // Ignore empty messages
+
+            appendMessage('user', userMessage);
+            document.getElementById('message-input').value = '';
+
+            // Show bot typing indicator
+            appendMessage('bot', 'Typing...', true);
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remove bot typing indicator
+                const typingMessage = document.querySelector('.typing');
+                if (typingMessage) typingMessage.remove();
+
+                // Append the bot's response
+                appendMessage('bot', data.response);
+                chatLog.scrollTop = chatLog.scrollHeight; // Auto-scroll to the latest message
+            });
+        }
+
+        function appendMessage(sender, message, typing = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', sender);
+            if (typing) messageElement.classList.add('typing');
+            messageElement.innerHTML = `<span>${message}</span>`;
+            chatLog.appendChild(messageElement);
+
+            // Auto-scroll to the latest message
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function resetChat() {
+            fetch('/reset')
+            .then(response => {
+                if (response.ok) {
+                    resetMessage.innerText = "The chat has been reset. You can start a new conversation.";
+                    messageContainer.style.display = "block"; // Show the reset message
+                    chatLog.innerHTML = ""; // Clear the chat log
+                }
+            });
+        }
+    </script>
+</body>
+</html>

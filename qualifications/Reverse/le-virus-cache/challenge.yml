@@ -1,0 +1,47 @@
+# Required sections
+name: Le virus caché
+author: bolo
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: Reverse
+
+# Markdown friendly
+description: |-
+    Les rebelles ont mis la main sur un extrait secret d’un projet en cours dans un laboratoire sous contrôle gouvernemental. 
+    C’est maintenant à vous d’analyser cet extrait pour percer ses mystères et révéler les secrets **cachés**. 
+    Serez-vous capable de déchiffrer les données et de découvrir ce qui se trame réellement ?
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur: bolo
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+flags:
+    - NBCTF{sPyw@RE_1n5tA11ed}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - reverse
+    - elf
+    - Moyen
+
+files:
+    - dist/hiddenvirus
+
+# Can be removed if unused
+hints:
+  - content: Une fonction est déclarée mais non appelée par le programme, peut-être faudrait-il l'exécuter (EIP 👀)
+    cost: 10
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

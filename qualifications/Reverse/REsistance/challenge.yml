@@ -1,0 +1,32 @@
+name: REsistance
+author: Endeavxor
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Reverse
+description: |-
+  Petite mise en jambes ... Les chaînes de caractères peuvent être intéressantes ...
+
+  Format NBCTF{flag}
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{S7R1NGs_GReP_for_7he_W1N!}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Introduction
+- Endeavxor
+
+# Can and should be remove if not used
+files:
+- dist/binary
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

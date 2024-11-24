@@ -1,0 +1,50 @@
+# Required sections
+name: Heap-er fort
+author: Drahoxx
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: Pwn
+
+# Markdown friendly
+description: |-
+  Prouve que tu es le plus fort même si tu n'es qu'un humain !
+
+  La fonction `win` permet de lire le flag (`/flag.txt`).
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: nc challenges.nobrackets.fr 10203
+
+
+flags:
+    - NBCTF{If_Pwn_Is_Magic_Heap_Is_SORCERY!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+    - Heap
+    - Pwn
+
+# visible | hidden
+state: visible
+
+# Can be removed if unused
+files:
+    - dist/heaper_fort
+    - dist/heaper-fort.c
+    - dist/Makefile
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

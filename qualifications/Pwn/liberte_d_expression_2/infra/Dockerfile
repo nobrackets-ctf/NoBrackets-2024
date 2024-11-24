@@ -1,0 +1,33 @@
+FROM debian:bookworm-slim
+
+# Update apt
+RUN apt update
+
+# Install socat
+RUN apt install -y socat
+
+# Remove apt lists to reduce image size
+RUN rm -rf /var/lib/apt/lists/*
+
+# Copy liberte to /app
+COPY liberte_v2 /app/
+
+# Copy flag to /flag.txt
+COPY flag.txt /
+
+# Add a user named "chall"
+RUN useradd chall
+
+# Make /app/liberte executable by chall
+RUN chmod +x /app/liberte_v2 && chown chall:chall /app/liberte_v2
+
+# Disable access to /tmp and /var/tmp for chall user
+RUN chmod 700 /tmp /var/tmp && \
+    chown root:root /tmp /var/tmp
+
+
+# Switch to chall user
+USER chall
+
+# Launch socat on port 10203
+CMD ["socat", "TCP-LISTEN:10204,reuseaddr,fork", "EXEC:/app/liberte_v2,stderr"]

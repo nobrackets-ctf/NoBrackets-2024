@@ -1,0 +1,44 @@
+# Required sections
+name: Geoguessr
+author: Shynif
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Osint
+
+# Markdown friendly
+description: |-
+  Agent, vous devez trouver le nom de la ville qu'à pris en photo notre espion ~~en vacances~~ en mission !
+
+  Format du flag : `NBCTF{<Nom_De_La_Ville>}`
+
+  Exemple : `NBCTF{Paris}`
+
+  Auteur : Shynif
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+flags:
+    - NBCTF{Palerme}
+    - NBCTF{Palermo}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Facile
+    - GeoINT
+
+# Supprimer 'files' si aucun fichier à mettre sur le CTFd
+files:
+    - dist/geoguessr.html
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

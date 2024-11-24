@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::TabShape::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_2">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_4">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_3">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_6">
+    <property name="geometry">
+     <rect>
+      <x>201</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_5">
+    <property name="geometry">
+     <rect>
+      <x>201</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_8">
+    <property name="geometry">
+     <rect>
+      <x>271</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_7">
+    <property name="geometry">
+     <rect>
+      <x>271</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_10">
+    <property name="geometry">
+     <rect>
+      <x>341</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_9">
+    <property name="geometry">
+     <rect>
+      <x>341</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_12">
+    <property name="geometry">
+     <rect>
+      <x>411</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_11">
+    <property name="geometry">
+     <rect>
+      <x>411</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_14">
+    <property name="geometry">
+     <rect>
+      <x>481</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_13">
+    <property name="geometry">
+     <rect>
+      <x>481</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_16">
+    <property name="geometry">
+     <rect>
+      <x>551</x>
+      <y>345</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::DownArrow</enum>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton_15">
+    <property name="geometry">
+     <rect>
+      <x>551</x>
+      <y>158</y>
+      <width>28</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+    <property name="arrowType">
+     <enum>Qt::ArrowType::UpArrow</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>280</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>36</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="text">
+     <string>KSDSMDML</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>210</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Entrez le code :</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>401</y>
+      <width>80</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Valider</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_6">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Mono SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_5">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_7">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Mono SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_8">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>215</y>
+      <width>50</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Mono SemiBold</family>
+      <pointsize>30</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="inputMask">
+     <string>H</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="maxLength">
+     <number>1</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>10</y>
+      <width>135</width>
+      <height>135</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="logo_gouv.qrc">:/Downloads/logo_gouv.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="logo_gouv.qrc"/>
+ </resources>
+ <connections/>
+</ui>

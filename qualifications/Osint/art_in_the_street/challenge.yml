@@ -1,0 +1,44 @@
+name: Art in the Street
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: OSINT
+description: |-
+  Depuis quelque temps, votre indic Bellob Ito (bellob_ito) ne donne plus de nouvelles, c'est inquiétant !
+  
+  Inspecter ses réseaux sociaux pour essayer de trouver ce qui lui est arriver.
+  
+  Dans un premier temps, concentrez-vous pour retrouver ses street artistes préféré. 
+  
+  Les œuvres se trouvent apparemment dans ses endroits préférés de la ville.   
+
+  Format : 
+  NBCTF{Prénom Nom de l'artiste 1|Prénom Nom de l'artiste 2} (case insensitive)
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- {
+        type: "static",
+        content: "NBCTF{Eduardo Kobra|Naveen Shakil Khan}",
+        data: "case_insensitive",
+    }
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Facile
+- Shaym
+
+# Can and should be remove if not used
+#files:
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

@@ -1,0 +1,62 @@
+# Required sections
+name: "Implant 3/3"
+author: "nathan.out"
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+   Récapitulons : `IMPORTANT_nouvel_exploit_drone_a_tester.exe` est notre malware qui a été téléchargé par `noclick`. Il l'a lancé le `2024-09-08 15:20:39` par le biais de `cmd.exe` (ce qu'il a vraiment fait c'est de lancer le virus **depuis** le terminal (`cmd.exe`)).
+   
+   Mais... que fait vraiment ce virus ? Quelles sont ses capacités ? L'informateur vous fournit un fichier qui contient l'activité réseau de l'ordinateur de `noclick` au moment de l'infection. Vous devez identifier les **commandes** que le pirate a exécuté sur la machine de `noclick`.
+   
+   Le format du flag est le suivant : NBCTF{<commande1_commande2_...>}. Par exemple, si le pirate a exécuté les 2 commandes suivantes : `mkdir C:\Users\noclick\new_dossier` et `cd C:\System32`, alors le flag sera : `NBCTF{cd_mkdir}`.
+   Ordonnez les commande par ordre **alphabétique** (comme dans l'exemple).
+
+    Pour résoudre ce challenge je vous invite à télécharger [Wireshark](https://www.wireshark.org/download.html) qui est un outil gratuit d'analyse de capture réseau. Ensuite, ouvrez le fichier fournit avec le logiciel. Si vous ne savez pas comment l'utiliser : et bien renseignez-vous ;).
+
+    Auteur : [nathan.out](https://nathan-out.github.io/)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{dir_type}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Moyen
+    - forensic
+    - wireshark
+    - analyse réseau
+
+# Can be removed if unused
+files:
+    - dist/capture_reseau.zip
+
+# Can be removed if unused
+hints:
+    - {
+        content: "Regardez de plus près ce qu'il se passe lorsque cette IP **envoie** des paquets : `172.20.10.2`. Utilisez les filtres de Wireshark.",
+        cost: 10
+    }
+    - {
+        content: "Afin de voir la **conversation** entre `172.20.10.3` (ordinateur de `noclick`) et `172.20.10.2` : clic droit sur un paquet > Suivre > Flux TCP.",
+        cost: 10
+    }
+    - L'adresse IP de l'ordinateur de `noclick` est `172.20.10.3`.
+
+# Can be removed if unused
+requirements:
+    - Implant 2/3
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

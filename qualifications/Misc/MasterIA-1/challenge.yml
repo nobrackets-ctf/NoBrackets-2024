@@ -1,0 +1,46 @@
+# Required sections
+name: "Master of AI - 1"
+author: "TheoR"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Misc"
+
+# Markdown friendly
+description: |-
+    Le groupe rebelle utilise de plus en plus l'IA générative pour monter ses opérations. 
+    Les informations confidentielles sont-elles réellement toutes en sécurité ?
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur : TheoR
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: https://deploy.nobrackets.fr
+# Todo, je sais pas quoi mettre
+
+# # Can be removed if unused
+# attempts: 5
+
+flags:
+    - NBCTF{brain_ai}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Facile
+    - IA
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

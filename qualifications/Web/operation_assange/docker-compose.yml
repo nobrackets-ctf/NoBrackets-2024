@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  operation_assange:
+    image: operation_assange
+    privileged: false
+    build:
+      context: .
+      dockerfile: ./infra/Dockerfile
+    container_name: operation_assange
+    restart: always
+    ports:
+      - "10001:5000"

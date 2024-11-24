@@ -1,0 +1,30 @@
+name: Inattention fatale
+author: 6E 61 74 68
+category: OSINT
+description: |-
+    Nous investiguons plus en profondeur sur la photo que nous avons trouvé lors de la "Fuite en Touriste"
+    Le suspect ne semble être qu'un pion dans l'échiquier.
+    Saurez vous retrouver le prénom et le nom d'un de ses supérieurs ?
+    
+    Format du flag : `NBCTF{prenom-nom}`
+
+    Auteur : [6E 61 74 68](https://twitter.com/6e617468) from [isFred.fr](https://isFred.fr)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{joseph-seleznev}
+
+topics:
+    - socint
+
+tags:
+    - Difficile
+
+version: "0.1"

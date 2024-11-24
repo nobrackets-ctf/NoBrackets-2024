@@ -1,0 +1,48 @@
+name: Cyber Elections (3/3)
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web
+description: |-
+  L'état totalitaire **Cybört** en a marre de vous ! Cette fois-ci, pas de failles !
+  
+  Pour cela, ils ont ajouté des comptes nominatifs à chaque habitant, une toute nouvelle API pour gérer les comptes et un outil de tracking !
+
+  Faites de nouveau gagner l'opposition.
+
+  *Ps: On ne peut toujours pas voter pour le candidat de son choix...*
+  *Ps: Téléchargez les sources et testez en local avec `docker compose up --build`*
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr
+
+files:
+- dist/CYBER_ELECTIONS_3.tar.gz
+
+flags:
+- NBCTF{Tr4ck1ng_1s_b4d_f0r_Pr1v4cy_but_g0od_f0r_Pir4cy!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Difficile
+- Drahoxx
+
+requirements:
+  - Cyber Elections (2/3)
+
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

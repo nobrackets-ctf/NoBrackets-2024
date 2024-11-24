@@ -1,0 +1,37 @@
+name: SuperVision
+author: K.L.M
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web3
+description: |-
+  Afin de commencer votre aventure dans la technologie des contrats intelligents et déjouer les pièges du gouvernement, trouvez comment ouvrir la première porte du bunker sécurisé en exploitant le contrat.
+  
+  Auteur : [K.L.M](https://x.com/Clemhate2)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr
+
+files:
+- dist/SuperVision.sol
+
+flags:
+- NBCTF{B1ENV3NU3_@_NBCTF24_2024}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Facile
+- Web3
+- K.L.M
+
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

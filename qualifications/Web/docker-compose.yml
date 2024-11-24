@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+  web-canard-dechaine:
+    privileged: false
+    build:
+      context: ./canard_dechaine
+      dockerfile: ./infra/Dockerfile
+    container_name: web-canard-dechaine
+    restart: always
+    ports:
+      - "10000:3000"
+    mem_limit: 512m
+    cpus: 0.3
+
+  web-operation-assange:
+    privileged: false
+    build:
+      context: ./operation_assange
+      dockerfile: ./infra/Dockerfile
+    container_name: web-operation-assange
+    restart: always
+    ports:
+      - "10001:5000"
+    mem_limit: 512m
+    cpus: 0.3

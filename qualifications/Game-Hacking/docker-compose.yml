@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  gh-no-burning-colds-that-fire:
+    privileged: false
+    build:
+      context: ./NoBurningColdsThatFire_1-4/
+      dockerfile: ./infra/Dockerfile
+    container_name: gh-no-burning-colds-that-fire
+    restart: always
+    ports:
+      - "10500:5000"
+    mem_limit: 512m
+    cpus: 0.3

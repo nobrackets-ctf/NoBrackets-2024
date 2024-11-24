@@ -1,0 +1,40 @@
+name: Cyber Elections (1/3)
+author: Drahoxx
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Web
+description: |-
+  L'état totalitaire de **Cybört** veut prouver son implication démocratique et organise un vote pour élire le prochain commandant.
+  Cependant, le système de vote ne tient pas la route : 
+  - Il ne permet pas de voter pour le candidat de son choix !
+  - On peut tricher !
+
+  Pour réussir ce challenge, vous devez réussir a faire gagner le candidat de l'opposition.
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+connection_info: https://deploy.nobrackets.fr
+
+flags:
+- NBCTF{Viv3_Z4ry4!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+- Facile
+- Bot
+- Drahoxx
+
+# More info: https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+state: visible
+
+# Do not touch, ctf-cli related
+version: '0.1'

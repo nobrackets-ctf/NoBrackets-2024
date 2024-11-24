@@ -1,0 +1,44 @@
+name: API Secret
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Reverse
+description: |-
+  Lors de votre infiltration furtive dans les locaux de la plus grosse firme du pays,
+  
+  Vous avez réussi à dérober les sources d'un software révolutionnaire.
+  
+  Toutefois, les développeurs de l'entreprise ne sont pas bêtes, ils ont obfusqué le code !
+  
+  A vous d'arriver à faire parler l'API pour retrouver le flag !
+
+  Note pour lancer le challenge :
+  ```
+  $ cd Dockerfile
+  $ docker build -t obfuscated-script-runner .
+  $ docker run -d --name my_obfuscated_container -v "$(pwd)/dist:/app" obfuscated-script-runner
+  ```
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{13_mystere_reste_entier}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Moyen
+- Shaym
+
+# Can and should be remove if not used
+files:
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+- dist/Dockerfile.zip
+# Do not touch, ctf-cli related
+version: '0.1'

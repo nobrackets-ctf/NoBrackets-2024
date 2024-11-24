@@ -1,0 +1,35 @@
+# Fichier template à réutiliser pour chaque challenge
+# Contient les informations CTFD
+
+# Champs requis
+name: "Crack and Hash"
+author: "Daeras"
+category: Misc
+description: |-4 
+    
+    J'ai perdu l'accès à mon gestionnaire de mots de passe et je n'ai pu récupérer que les hash. Vous auriez un moyen de les retrouver ? Ils sont assez simples mais je ne me souviens pas de tous, il y en a quelques dizaines...
+
+    Auteur: [Daeras](https://x.com/0xDaeras)
+
+
+type: dynamic
+
+# Points
+value: 500
+extra:
+    initial: 500
+    decay: 30
+    minimum: 100
+
+connection_info: nc challenges.nobrackets.fr 10301
+
+flags:
+    - NBCTF{D0n7_cr4ck_7h1ng5_f0r_p30pl3}
+
+tags:
+    - Facile
+    - Misc
+    - Programmation
+    - Daeras
+
+version: "0.1"

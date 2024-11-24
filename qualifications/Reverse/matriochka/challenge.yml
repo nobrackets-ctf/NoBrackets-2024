@@ -1,0 +1,43 @@
+name: Matriochka
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Reverse
+description: |-
+  Lors de votre journée d'analyste cyber au sein du cyber gouvernement vous avez reçu une alerte générée par un fichier bizarre.
+
+  Analyser ce fichier qui réalise des connexions internet inopinées et retrouver avec quel url le programme tente de communiquer.
+
+  Format NBCTF{https://www.google.com}
+
+  /!\ Disclaimer : Le sample de malware a été analysé et dans la mesure du possible rendu inoffensif.
+  
+  De plus, les liens de téléchargement vers les prochaines étapes du malware ne sont plus actifs.
+
+  Toutefois, il est fortement recommandé de réaliser ce challenge dans une VM ou avec des outils en ligne (CyberChef, Tio.run...)
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{https://drive.google.com/uc?export=download&id=1n-cTOzbYrzArxpCzrL6B04RHq4_Gjn0t}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Moyen
+- Analyse de malware
+- Shaym
+
+# Can and should be remove if not used
+files:
+- dist/fichier_louche.zip
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

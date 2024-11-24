@@ -1,0 +1,45 @@
+# Required sections
+name: VIP Only
+author: Drahoxx
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: Web
+
+# Markdown friendly
+description: |-
+  Vous voilà devant l’entrée d'un club ultra select réservé aux VIPs ! Pas la peine d'insister si vous n'êtes qu'un simple moldu... Cependant, vous êtes un hacker, alors usez de vos talents pour franchir les portes dorées et mettre la main sur le flag !
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: https://deploy.nobrackets.fr
+
+
+flags:
+    - NBCTF{0nly_VIPs_Ar3_All0weD_H3re!}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Facile
+    - Node
+
+# Can be removed if unused
+files:
+    - dist/vip-only.zip
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

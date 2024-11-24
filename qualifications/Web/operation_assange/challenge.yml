@@ -1,0 +1,41 @@
+# Required sections
+name: "Operation Assange"
+author: "Al-oxos"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Web"
+
+# Markdown friendly
+description: |-
+    Rebelles, nous venons de découvrir le site web du Bureau National des Opérations Stratégiques.
+    D'après nos sources, le site web présente une faille de sécurité qui permettrait de récupérer des informations sensibles.
+    De plus, le site étant particulièrement critique, il semblerait que l'administrateur soit très actif et rapide quant aux remontées des utilisateurs.
+    Il pourrait être intéressant d'essayer de récupérer l'accès administrateur de la plateforme...
+
+    Auteur : Al-oxos
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: http://challenges.nobrackets.fr:10001
+
+flags:
+    - NBCTF{San1t1za7i0n_1s_1mp0r7an7_aga1nst_XSS_huh}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - web
+    - Moyen
+    - bot
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

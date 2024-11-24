@@ -1,0 +1,13 @@
+ version: '3.1'
+
+ services:
+   capitales:
+     image: capitales
+     privileged: false
+     build:
+       context: ./infra
+       dockerfile: Dockerfile
+     container_name: capitales
+     restart: always
+     ports:
+       - "1337:1337"

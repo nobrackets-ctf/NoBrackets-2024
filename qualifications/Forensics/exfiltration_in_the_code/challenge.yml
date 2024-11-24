@@ -1,0 +1,38 @@
+name: Exfiltration In The Code
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: Forensic
+description: |-
+  Vous avez, avec votre équipe de cyber-résistant, intercepté du trafic réseau en provenance de l'entreprise que vous essayez d'infiltrer depuis plusieurs mois.
+  
+  Cette capture contient les codes d'entrée des différents points d'intérêt de l'immeuble.
+  
+  Afin de préparer l'opération, retrouvez les codes de l'accès Accès toit/terrasse et de Salle de contrôle de sécurité.
+
+  Format du flag : `NBCTF{code1|code2}`
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- NBCTF{4685#|8316#}
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Facile
+- Shaym
+
+# Can and should be remove if not used
+files:
+- dist/ids_cap_case001.pcapng
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

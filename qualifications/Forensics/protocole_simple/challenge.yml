@@ -1,0 +1,47 @@
+# Required sections
+name: "Protocole Simple"
+author: "ribt"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Forensic"
+
+# Markdown friendly
+description: |-
+    Nous avons mis la connexion réseau d'un ordinateur sur écoute. Il a téléchargé un fichier suspect. Saurez-vous le retrouver ?
+
+    Auteur : ribt
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{N0w_Y0u_Kn0w_why_is_HTTPS_1mp0rtant}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Introduction
+    - reseau
+    - http
+
+# Can be removed if unused
+files:
+    - dist/capture.pcap
+
+# Can be removed if unused
+#hints:
+#    - {
+#        content: "This hint costs points",
+#        cost: 10
+#    }
+#    - This hint is free
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

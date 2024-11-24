@@ -1,0 +1,14 @@
+ version: '3.1'
+ 
+ services:
+   stop_censure:
+     image: stop_censure
+     privileged: false
+     build:
+       context: ./infra
+       dockerfile: Dockerfile
+     container_name: stop_censure
+     restart: always
+     ports:
+       - "1337:1337"
+

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../../Downloads/logo_gouv.png</file>
+    </qresource>
+</RCC>

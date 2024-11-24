@@ -1,0 +1,51 @@
+name: To Beer or not to beer
+author: Shaym
+# Crypto ; Web3 ; Web ; Reverse ; Forensic ; Misc ; OSINT ; Pwn
+category: OSINT
+description: |-
+  Vous n'avez toujours pas retrouvé la trace de votre indic Bellob Ito (bellob_ito).
+  
+  La dernière activité connue remonte à ce rendez-vous secret qu'il avait reçu dans son club underground préféré !
+  
+  Inspecter ses réseaux sociaux pour essayer de trouver ce qui lui est arrivé.
+  
+  Pour ce challenge-ci, concentrez-vous sur les mystères que renferme ce fameux club. 
+  
+  Il vous faut retrouver ce fameux club ainsi que le prix et le village d'origine de sa consommation préférée lors de son dernier voyage.
+
+  Format du flag :
+  `NBCTF{msocial Rooftop|25|La Guillotière}` (case insensitive)
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch that, dynamic scoring is used.
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+- {
+        type: "static",
+        content: "NBCTF{Old Rabbit Club|11|Houffalize}",
+        data: "case_insensitive",
+    }
+- {
+        type: "static",
+        content: "NBCTF{124 Old Rabbit Club|11|Houffalize}",
+        data: "case_insensitive",
+    }
+
+# Tags are : 1. Difficulty (Intro, Easy, Medium, Hard, Insane) ; 2. General theme (no spoil) ; 3. Author
+tags:
+- Moyen
+- Shaym
+
+# Can and should be remove if not used
+#files:
+# More info : https://github.com/CTFd/ctfcli/blob/master/ctfcli/spec/challenge-example.yml
+
+# Do not touch, ctf-cli related
+version: '0.1'

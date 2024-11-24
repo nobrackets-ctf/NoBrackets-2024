@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cyberpunk Voting System</title>
+    <style>
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00ff00, -0.05em -0.025em 0 #ff00ff;
+            }
+            14% {
+                text-shadow: 0.05em 0 0 #00ff00, -0.05em -0.025em 0 #ff00ff;
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 #00ff00, 0.025em 0.025em 0 #ff00ff;
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00ff00, 0.025em 0.025em 0 #ff00ff;
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 #00ff00, 0.05em 0 0 #ff00ff;
+            }
+            99% {
+                text-shadow: 0.025em 0.05em 0 #00ff00, 0.05em 0 0 #ff00ff;
+            }
+            100% {
+                text-shadow: -0.025em 0 0 #00ff00, -0.025em -0.025em 0 #ff00ff;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 20px #00ff00;
+            }
+            50% {
+                box-shadow: 0 0 30px #00ff00;
+            }
+            100% {
+                box-shadow: 0 0 20px #00ff00;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0c0c0c;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: 
+                linear-gradient(45deg, #000 25%, transparent 25%),
+                linear-gradient(-45deg, #000 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #000 75%),
+                linear-gradient(-45deg, transparent 75%, #000 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            animation: fadeIn 1s ease-in;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 20px #00ff00;
+            max-width: 400px;
+            width: 100%;
+            animation: pulse 2s infinite;
+        }
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px #00ff00;
+            animation: glitch 0.3s infinite;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            background-color: #1a1a1a;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 10px #00ff00;
+            transform: scale(1.05);
+        }
+        button, .reset-password {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        button:hover, .reset-password:hover {
+            background-color: #000;
+            color: #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+            transform: scale(1.05);
+        }
+        .messages {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .messages .error {
+            color: #ff0000;
+            animation: glitch 2s infinite;
+        }
+        .messages .success {
+            color: #00ff00;
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Access System</button>
+        </form>
+        <div class="messages">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Traitement de Colis - Amazone</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            background-color: #2d3748;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Page Content */
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #2d3748;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Styles for noVNC iframe */
+        .novnc-container {
+            width: 100%;
+            max-width: 850px;
+            height: 600px;
+            border: none;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+
+            position: relative;
+            top: -50px; /* décale le contenu vers le haut */
+            clip-path: inset(50px 0 50px 0); /* masque 50px en haut et en bas */
+        }
+
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #2b6cb0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+        }
+
+        /* Flag Message */
+        #flagMessage {
+            margin-top: 20px;
+            color: #2f855a;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="margin-left: 20px;">Amazone</div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="documentation.html" style="margin-right: 30px;">Documentation</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Bienvenue dans le Système de Gestion de Colis</h1>
+
+        <p>Le système qui vous est présenté transfère les colis d'une ligne vers une autre. Il est contrôlé par un système de capteurs et de moteurs. Un automate programmable est utilisé pour envoyer les bonnes instructions Modbus et permettre au système de fonctionner. La <a href="documentation.html">documentation</a> vous explique comment vous connecter au serveur Modbus.</p>
+        
+        <p>Votre objectif est de faire tomber des colis devant le capteur en bas de l'écran.</p>
+        <button class="button" onclick="retrieveFlag()">Récupérer le flag</button>
+        <div id="flagMessage"></div>
+
+        <h2>Vidéo-surveillance de l'entrepôt :</h2>
+
+        <iframe src="" class="novnc-container" title="noVNC Viewer" id="novnc-iframe"></iframe>
+    </div>
+
+    <script>
+        document.getElementById('novnc-iframe').src = `http://${window.location.hostname}:5901/vnc.html?password=readonly&autoconnect=1&view_only=1&resize=off&show_dot=1`;
+        function retrieveFlag() {
+            document.getElementById('flagMessage').innerText = "Chargement...";
+            fetch('/get-flag', { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    const flagMessage = document.getElementById('flagMessage');
+                    if (data.message) {
+                        flagMessage.innerText = data.message;
+                    } else {
+                        flagMessage.innerText = "Erreur lors de la récupération du flag, merci de contacter un admin.";
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('flagMessage').innerText = "Erreur lors de la récupération du flag, merci de contacter un admin.";
+                    console.error('Erreur:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>

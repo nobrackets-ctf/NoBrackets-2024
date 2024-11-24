@@ -1,0 +1,35 @@
+# Required sections
+name: "NoBurningColdsThatFire - 3/4"
+author: "shynif"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Game Hacking"
+
+# Markdown friendly
+description: |-
+    Une expérience vidéoludique cache quelque chose
+    
+    Flag 3: Oh non! J'ai un flag non utilisé dans le jeu ;-;
+    
+    Auteur: Shynif
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{Sprites_over_coke}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Facile
+    - Game-Hacking
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,49 @@
+# Required sections
+name: "Juste un petit peu de LSB"
+author: "TheDairMaster"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Steganographie"
+
+# Markdown friendly
+description: |-
+    Un message semble avoir été caché dans le fichier pourtant il n y a rien d anormal
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur : TheDairMaster
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+flags:
+    - NBCTF{D0_nOt_m3lt_th3_L5B}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - stega
+    - audio
+    - lsb
+    - Moyen
+
+# Can be removed if unused
+files:
+    - dist/chall.wav
+
+# Can be removed if unused
+hints:
+    - {
+        content: "Il est plus profond que d'habitude ce wav non ?",
+        cost: 20
+    }
+    - Le titre n est pas annodin
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,50 @@
+version: '3.1'
+
+services:
+  pwn-test-aleatoire:
+    privileged: false
+    build:
+      context: ./test_aleatoire/infra/
+      dockerfile: ./Dockerfile
+    container_name: pwn-test-aleatoire
+    restart: always
+    ports:
+      - "10200:10202"
+    mem_limit: 512m
+    cpus: 0.3
+
+  pwn-asmble-nationale:
+    privileged: false
+    build:
+      context: ./asmble_nationale/infra/
+      dockerfile: ./Dockerfile
+    container_name: pwn-asmble-nationale
+    restart: always
+    ports:
+      - "10201:10201"
+    mem_limit: 512m
+    cpus: 0.3
+
+  pwn-liberte-d-expression:
+    privileged: false
+    build:
+      context: ./liberte_d_expression/infra
+      dockerfile: Dockerfile
+    container_name: pwn-liberte-d-expression
+    restart: always
+    ports:
+      - "10202:10203"
+    mem_limit: 512m
+    cpus: 0.3
+
+  pwn-liberte-d-expression-v2:
+    privileged: false
+    build:
+      context: ./liberte_d_expression_2/infra
+      dockerfile: Dockerfile
+    container_name: pwn-liberte-d-expression-v2
+    restart: always
+    ports:
+      - "10203:10204"
+    mem_limit: 512m
+    cpus: 0.3

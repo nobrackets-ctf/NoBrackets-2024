@@ -1,0 +1,55 @@
+# Required sections
+name: PDF Macroscopique
+author: Shaym
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Forensic
+
+# Markdown friendly
+description: |-
+  Un collaborateur a reçu un fichier PDF par mail lui indiquant un grand danger.
+
+  Par peur de commettre une énorme bêtise, il s'est empressé de vous le transmettre pour analyse.
+
+  À vous de déterminer
+  1. Le mot de passe utilisé par l'attaquant pour protéger le script malveillant
+  2. Le hash sha256 du second stage du malware
+
+  Note : Durant la réalisation de ce challenge, vous allez potentiellement manipuler des samples de malware. 
+  À manipuler dans un système dédié de préférence.
+  
+  Format du flag : `NBCTF{motdepasse|2554890c396ec0d8a42cd1d3e6903b8480cfc75e8a37206a23f0e75809a96efe}`
+
+  Auteur : [Shaym](https://twitter.com/0xShaym)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Si vous avez besoin d'un service en ligne, placer un Dockerfile dans le dossier 'infra'
+# Sinon, supprimer le dossier 'infra' et la ligne 'connection_info'
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+# connection_info: nc challenges.nobrackets.fr 10203
+
+flags:
+    - NBCTF{VelvetSweatshop|c9e2821f3e10c7c2a012d0926f25826c402bd5a6a1e6a1879212b9241cfad8ea}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Difficile
+    - Malware Analysis
+
+# Supprimer 'files' si aucun fichier à mettre sur le CTFd
+files:
+    - dist/dangerous.pdf.zip
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

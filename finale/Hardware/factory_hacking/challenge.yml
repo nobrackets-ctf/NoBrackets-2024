@@ -1,0 +1,42 @@
+# Required sections
+name: Colis Amazone
+author: ribt
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Hardware
+
+# Markdown friendly
+description: |-
+  Vous avez réussi à infiltrer le réseau d'un entrepôt de traitement de colis. Vous avez accès à la video-surveillance, à la documentation et aux automates industriels. Parviendrez-vous à prendre le contrôle de la chaîne de traitement ?
+
+  **Si cela ne fonctionne plus, vous pouvez demander à un admin de redémarrer la chaîne de traitement.**
+
+  Auteur : ribt
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Si vous avez besoin d'un service en ligne, placer un Dockerfile dans le dossier 'infra'
+# Sinon, supprimer le dossier 'infra' et la ligne 'connection_info'
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: http://amazone.challenges.nobrackets.fr
+
+flags:
+    - NBCTF{Y0u_4r3_an_1ndustri4l_h4ck3r}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Moyen
+    - Modbus
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

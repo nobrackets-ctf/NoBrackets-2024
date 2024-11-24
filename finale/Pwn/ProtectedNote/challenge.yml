@@ -1,0 +1,51 @@
+# Required sections
+name: ProtectedNote
+author: Drahoxx
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: Pwn
+
+# Markdown friendly
+description: |-
+  Quoi de mieux qu'un système de notes pour un challenge de PWN ?
+
+  Ici, pas de heap, pas de libc, rien que de l'assembleur, cependant des protections sont présentes !
+  À vous de les contourner :)
+
+  Format du flag : `NBCTF{...}`
+  Le flag se trouve à la racine : `/flag.txt`
+
+  Auteur : [Drahoxx](https://x.com/50mgDrahoxx)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: nc challenges.nobrackets.fr 10206
+
+
+flags:
+    - NBCTF{ret2mprotect_W4s_Th1s_H4rd_OR_Ez?}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Difficile
+    - Pwn
+
+# visible | hidden
+state: visible
+
+# Can be removed if unused
+files:
+    - dist/protected-notes.s
+    - dist/notes
+    - dist/Makefile
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

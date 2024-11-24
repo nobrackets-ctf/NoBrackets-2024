@@ -1,0 +1,60 @@
+# Required sections
+name: "Time to flag (ou pas ?) (2/2)"
+author: "skilo"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Cryptanalyse"
+
+# Markdown friendly
+description: |-
+    Oula oula, ils ont mis à jour le PRNG, ça semble impossible ...
+
+    Format du flag : `NBCTF{...}`
+
+    Auteur : [skilo](https://skilo.sh)
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+# Can be removed if unused
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: nc challenges.nobrackets.fr 10401
+
+# # Can be removed if unused
+# attempts: 5
+
+flags:
+    - NBCTF{4f0d1c211c6bc60e865ad7e6a3491a3f}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - Démon
+    - PRNG
+
+# Can be removed if unused
+files:
+    - dist/chall.py
+
+# Can be removed if unused
+# hints:
+#     - {
+#         content: "This hint costs points",
+#         cost: 10
+#     }
+#     - This hint is free
+
+# # Can be removed if unused
+requirements:
+    - "Time to flag (1/2)"
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,51 @@
+# Required sections
+name: "Erreur d'implémentation"
+author: "bolo"
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Programmation ; Pwn ; Reseau ; Reverse ; Steganographie ; Systeme ; Web
+category: "Reverse"
+
+# Markdown friendly
+description: |-
+    Les rebelles prévoient de faire exploser un pont suspendu au moment où un convoi militaire du régime le traverse, dans le but de libérer les prisonniers transportés. 
+    Cependant, le détonateur de la bombe ne fonctionne pas correctement. Le matériel est intact, mais le problème semble venir du codage du programme de lancement. 
+    Votre mission est cruciale, vous devez trouver une solution pour déclencher la détonation avant la venue du convoi. Le temps presse, tout repose sur vous !
+
+    Flag Format: NBCTF{flag}
+    
+    Auteur: bolo
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 30
+  minimum: 100
+
+
+flags:
+    - NBCTF{Kab00m_1S_1mmin3nT}
+
+# Difficulties: Introduction; Facile; Moyen; Difficile; Démon
+tags:
+    - reverse
+    - elf
+    - gdb
+    - Facile
+
+# Can be removed if unused
+files:
+    - dist/launcher
+
+# Can be removed if unused
+hints:
+  - content: Quel est le registre accumulateur en architecture x86 ?
+    cost: 10
+  - Il serait intéressant de suivre ce qu'il se passe dans les registres.
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

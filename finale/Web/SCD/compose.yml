@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  scd:
+    image: scd
+    privileged: false
+    build:
+      context: ./infra/
+      dockerfile: Dockerfile
+    container_name: scd
+    restart: always
+    ports:
+      - "10001:5000"

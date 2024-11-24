@@ -1,0 +1,13 @@
+ version: '3.1'
+ 
+ services:
+   cyber_elections_two:
+     image: cyber_elections_two
+     privileged: false
+     build:
+       context: ./infra
+       dockerfile: Dockerfile
+     container_name: cyber_elections_two
+     restart: always
+     ports:
+       - "5000:5000"

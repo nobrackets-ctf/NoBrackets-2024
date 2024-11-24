@@ -1,0 +1,35 @@
+# Required sections
+name: Cadenas transparent
+author: ribt
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Hardware
+
+# Markdown friendly
+description: |-
+  Allez sur la table des admins et utilisez les outils de crochetage pour ouvrir le cadenas transparent.
+
+  Auteur : ribt
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+flags:
+    - NBCTF{L0ck_Unl0ck3d}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Facile
+    - lockpicking
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

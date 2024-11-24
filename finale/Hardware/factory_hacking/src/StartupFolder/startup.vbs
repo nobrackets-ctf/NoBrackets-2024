@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "C:\Users\user\Desktop\startup.bat", 0, True

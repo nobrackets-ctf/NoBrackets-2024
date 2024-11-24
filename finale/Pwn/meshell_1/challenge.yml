@@ -1,0 +1,50 @@
+# Required sections
+name: MeShell - 1
+author: Tek
+# Cryptanalyse ; Forensic ; Hardware ; Misc ; Osint ; Pwn ; Reverse ; Steganographie ; Web
+category: Pwn
+
+# Markdown friendly
+description: |-
+  Vous avez oublié de verrouiller votre session pendant une pause café et
+  Michel, votre collègue, en a profité pour remplacer votre shell préféré.
+
+  Trouvez un moyen d'afficher le flag.
+
+  Format du flag : `NBCTF{...}`
+
+  Auteur : Tek
+
+# Do not touch
+value: 500
+type: dynamic
+extra:
+  initial: 500
+  decay: 5
+  minimum: 100
+
+# Si vous avez besoin d'un service en ligne, placer un Dockerfile dans le dossier 'infra'
+# Sinon, supprimer le dossier 'infra' et la ligne 'connection_info'
+# nc challenges.nobrackets.fr <port> | http://challenges.nobrackets.fr:<port> | https://deploy.nobrackets.fr (if one instance per team)
+connection_info: nc challenges.nobrackets.fr 10203
+
+flags:
+    - NBCTF{7b92bd825e6a4903d3fe82b28867f7f2d63a6723}
+
+# 1er tag (difficulté) : Introduction; Facile; Moyen; Difficile
+# autres tags : indices
+tags:
+    - Facile
+    - Jail
+    - Bash
+
+# Supprimer 'files' si aucun fichier à mettre sur le CTFd
+files:
+    - dist/meshell.sh
+
+# visible | hidden
+state: visible
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"
